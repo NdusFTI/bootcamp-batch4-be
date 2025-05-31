@@ -50,3 +50,10 @@ export const vaultSnapshot = onchainTable("vault_snapshot", (t) => ({
   volume: t.bigint().notNull(),
   tvl: t.bigint().notNull(),
 }));
+
+export const position = onchainTable("position", (t) => ({
+  id: t.text().primaryKey(),
+  balance: t.bigint().notNull(),
+  entryPrice: t.numeric().notNull(),
+  realizedPnl: t.bigint().notNull(),
+}));
